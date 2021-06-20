@@ -5,7 +5,14 @@ class FilterOptions extends Component {
 	render() {
 		return (
 			<div className="filterOptions">
-				FILTER OPTIONS
+				<span>Ascending</span>
+				<form>
+					<select name="Genre" id=""></select>
+					<select name="Rating" id=""></select>
+					<select name="Age Group" id=""></select>
+					<select name="Runtime" id=""></select>
+					<select name="Release Date" id=""></select>
+				</form>
 			</div>
 		);
 	}
