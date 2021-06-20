@@ -1,0 +1,17 @@
+.mainContentArea {
+  background-color: cadetblue;
+  width: 100%;
+  height: calc(100% - 150px);
+  display: flex;
+}
+
+.leftContent {
+  flex-basis: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rightContent {
+  flex-basis: 20%;
+}
