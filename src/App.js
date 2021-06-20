@@ -1,5 +1,5 @@
 import './App.css';
-import { getMovies } from './services/api'
+import { getMovies, getMovieDetails } from './services/api'
 
 function App() {
   getMovies();

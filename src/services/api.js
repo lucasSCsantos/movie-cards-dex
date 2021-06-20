@@ -1,14 +1,30 @@
 const API_BASE = 'https://api.themoviedb.org/3';
-const API_KEY = '&api_key=9e5dfae837deb641a42cf25644c8bad5';
+const API_KEY = 'api_key=9e5dfae837deb641a42cf25644c8bad5';
+const API_LANGUAGE = 'language=pt-BR'
+
+// async function getGenres() {
+// 	const req = await fetch(`${API_BASE}/genre/movie/list?${API_KEY}`)
+// 	const genres = await req.json();
+// 	const genresList = genres.genres.map((genre) => {
+// 		return genre.id;
+// 	});
+// 	return genresList;
+// }
 
 export async function getMovies() {
 	let movieList = [];
-	for(let i = 0; i <= 10; i += 1){
-		const req = await fetch(`${API_BASE}/discover/movie?with_genres=18${API_KEY}`);
+	for(let i = 1; i <= 10; i += 1){
+		const req = await fetch(`${API_BASE}/movie/popular?${API_KEY}&${API_LANGUAGE}&page=${i}`);
 		const movies = await req.json();
-		console.log(movies);
 		movieList = [...movieList, ...movies.results];
 	}
 	console.log(movieList);
 	return movieList;
+}
+
+export async function getMovieDetails(id) {
+	const req = await fetch(`${API_BASE}/movie/${id}?${API_KEY}&${API_LANGUAGE}`)
+	const movieDetails = await req.json();
+	console.log(movieDetails);
+	return movieDetails;
 }
