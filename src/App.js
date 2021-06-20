@@ -1,12 +1,19 @@
 import './App.css';
-import { getMovies, getMovieDetails } from './services/api'
+import MovieDex from './components/MovieDex';
+import MoviePage from './components/MoviePage';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
-  getMovies();
   return (
-    <div className="App">
-      Massa ta funfando
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" component={MovieDex} />
+        <Route
+          path="/moviePage/:id"
+          render={(props) => <MoviePage {...props} />}
+        />
+      </Switch>
+    </Router>
   );
 }
 
