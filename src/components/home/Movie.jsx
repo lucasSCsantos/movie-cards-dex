@@ -6,8 +6,11 @@ class Movie extends Component {
 		const { movie } = this.props;
 		const IMG_BASE = 'https://image.tmdb.org/t/p/w200'
 		return (
-			<div>
-				<div className="movieImg" style={{backgroundImage: `url(${IMG_BASE}${movie.poster_path})`}}></div>
+			<div className="movieCard">
+				<div className="movieImg" style={{backgroundImage: `url(${IMG_BASE}${movie.poster_path})`}}>
+					<div className="movieCardBottom">
+					</div>
+				</div>
 			</div>
 		);
 	}

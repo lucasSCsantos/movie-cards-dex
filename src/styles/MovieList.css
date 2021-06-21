@@ -1,5 +1,8 @@
 .movieList {
-  background-color: crimson;
+  background-color: blue;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  height: 101vh;
 }

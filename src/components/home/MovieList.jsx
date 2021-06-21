@@ -11,6 +11,7 @@ class MovieList extends Component {
 			movieQuant: 9,
 		}
 		this.generateMoviesList = this.generateMoviesList.bind(this);
+		this.changePage = this.changePage.bind(this);
 	}
 
 	componentDidMount() {
@@ -24,6 +25,12 @@ class MovieList extends Component {
 		})
 	}
 
+	changePage() {
+		this.setState((previous) => ({
+			movieQuant: previous.movieQuant + 10,
+		}))
+	}
+
 	render() {
 		const { moviesList, movieQuant } = this.state;
 		console.log(moviesList)
@@ -32,6 +39,7 @@ class MovieList extends Component {
 				{moviesList.slice((movieQuant-9), movieQuant).map((movie, index) => (
 					<Movie movie={movie} key={index} />
 				))}
+				<button onClick={this.changePage}></button>
 			</div>
 		);
 	}
