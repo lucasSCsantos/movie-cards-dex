@@ -28,6 +28,7 @@ class FilterOptions extends Component {
 	
 	render() {
 		const { genresList, releaseYears } = this.state;
+		const { ratingSort } = this.props;
 		return (
 			<div className="filterOptions">
 				<span>Ascending</span>
@@ -38,7 +39,7 @@ class FilterOptions extends Component {
 							<option value={genre} key={index}>{genre.name}</option>	
 						))}
 					</select>
-					<select name="Rating">
+					<select name="Rating" onChange={ratingSort}>
 						<option value="" disabled selected hidden>Rating</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
