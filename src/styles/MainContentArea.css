@@ -1,0 +1,19 @@
+.mainContentArea {
+  width: 100%;
+  height: calc(100% - 150px);
+  display: flex;
+  background-color: var(--primary-color);
+  justify-content: space-between;
+}
+
+.leftContent {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rightContent {
+  width: 28%;
+  background-color: tomato;
+}
