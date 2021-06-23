@@ -8,10 +8,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" component={MovieDex} />
-        <Route
-          path="/moviePage/:id"
-          render={(props) => <MoviePage {...props} />}
-        />
+        <Route path="/moviePage/:id" render={(props) => <MoviePage {...props} />} />
       </Switch>
     </Router>
   );
